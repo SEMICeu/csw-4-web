@@ -1,0 +1,32 @@
+header, section, footer {
+  overflow: hidden;
+}
+nav {
+  max-width: 978px;
+  margin: 0px auto;
+  display: block;
+  clear: both;
+  padding: 0px 40px;
+}
+section {
+  margin-top:0px;
+}
+#src {
+  font-size: 1.4em;
+  width: 100%;
+}
+.metadata dt {
+  display: block;
+  float: none;
+  text-align: left;
+  width: auto;
+}
+.metadata dd {
+  margin-left: 40px;
+}
+.metadata a, .metadata code, .metadata pre {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
