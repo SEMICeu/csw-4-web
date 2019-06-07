@@ -3,8 +3,10 @@
   ini_set('display_errors',1);
   error_reporting(E_ALL);
 
+// Set this variable to "yes" in case you want to enable the possibility for users to test arbitrary CSW endpoints.
+
   $customCSW = "no";
-  $customCSW = "yes";
+//  $customCSW = "yes";
 
   require_once("./include/metadata.php");
   require_once("./include/functions.php");
