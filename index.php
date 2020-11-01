@@ -72,7 +72,7 @@
   $srv["eea-csw"]["name"] = "EEA SDI Catalogue";
   $srv["eea-csw"]["description"] = "1,000+ records";
 
-  $srv["inspire-geoportal-csw"]["capabilities"] = "http://inspire-geoportal.ec.europa.eu/GeoportalProxyWebServices/resources/OGCCSW202?request=GetCapabilities&service=CSW";
+  $srv["inspire-geoportal-csw"]["capabilities"] = "https://inspire-geoportal.ec.europa.eu/GeoportalProxyWebServices/resources/OGCCSW202?request=GetCapabilities&service=CSW";
   $srv["inspire-geoportal-csw"]["id"] = hash("crc32",$srv["inspire-geoportal-csw"]["capabilities"]);
   $srv["inspire-geoportal-csw"]["name"] = "INSPIRE Geoportal Discovery Service";
   $srv["inspire-geoportal-csw"]["description"] = "200,000+ records";
