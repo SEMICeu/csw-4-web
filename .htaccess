@@ -1,7 +1,7 @@
 DirectoryIndex index.html index.php
 RewriteEngine On
 # Specify here the absolute path from the document root to the API root folder
-RewriteBase /csw-4-web/
+RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 # Adds a trailing slash after serviceid param, if missing.
