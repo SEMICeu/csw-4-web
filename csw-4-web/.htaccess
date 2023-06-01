@@ -1,0 +1,15 @@
+DirectoryIndex index.html index.php
+RewriteEngine On
+# Specify here the absolute path from the document root to the API root folder
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# Adds a trailing slash after serviceid param, if missing.
+RewriteRule ^([a-zA-Z0-9\-]+)$ ./$1/ [R=301,L]
+# Adds a trailing slash after resource, if missing.
+RewriteRule ^([a-zA-Z0-9\-]+)/resource$ ./$1/resource/ [R=301,L]
+# Maps the URI path to the URI query string submitted to the API.
+#RewriteRule ^([a-zA-Z0-9\-]+)/(resource/((\?(.+))|(([^?][^.]+)(\.(.+))?))?)?$ ./?serviceid=$1&req=$2&itemid=$7&format=$9&$5&&%{QUERY_STRING} [NC,PT]
+#RewriteRule ^([a-zA-Z0-9\-]+)/(resource/(([^?][^.]+)(\.(.+))?)?)?$ ./?serviceid=$1&req=$2&itemid=$4&format=$6&%{QUERY_STRING} [NC,PT]
+#RewriteRule ^([a-zA-Z0-9\-]+)/(resource/(([^?][^.]+))?)?(\.(.+))?$ ./?serviceid=$1&req=$2&itemid=$4&format=$6&%{QUERY_STRING} [NC,PT]
+RewriteRule ^([a-zA-Z0-9\-]+)/(resource/([a-zA-Z0-9\-_%:]+)?)?(\.(.+))?$ ./?serviceid=$1&req=$2&itemid=$3&format=$5&%{QUERY_STRING} [NC,PT]

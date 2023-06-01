@@ -1,0 +1,28 @@
+<?php
+
+// HTTP codes & corresponding pages
+
+  function returnHttpError($code) {
+    global $head;
+    $title =  $_SERVER["SERVER_PROTOCOL"] . ' ' . $code;
+    $content = '';
+    switch ($code) {
+      case 300:
+        $title .= ' Multiple Choices';
+        $content = '';
+        break;
+      case 404:
+        $title .= ' Not Found';
+        $content = 'The requested URL <code>' . $_SERVER["REQUEST_URI"] . '</code> was not found on this server.';
+        break;
+      case 415:
+        $title .= ' Unsupported Media Type';
+        $content = 'The server does not support the media type transmitted in the request.';
+        break;
+    }
+    http_response_code($code);
+    echo '<!DOCTYPE html><html><head><title>' . $title . '</title>' . str_replace("\n", "", $head) . '</head><body><header><h1>' . $title . '</h1></header><section><p>' . $content . '</p></section></body></html>';
+    exit;
+  }
+
+?>
